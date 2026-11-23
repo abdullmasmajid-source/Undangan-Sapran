@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Walimatul Khitan - Sapran</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDeep: '#042f24',
+                        emeraldRich: '#064e3b',
+                        emeraldCard: '#083b2e',
+                        goldPrimary: '#d4af37',
+                        goldLight: '#f3e5ab',
+                        goldDark: '#aa820a',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        arabic: ['"Amiri"', 'serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 28s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.7)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Pola Latar Belakang Geometris Islami */
+        .islamic-pattern {
+            background-color: #042f24;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px),
+                              radial-gradient(rgba(212, 175, 55, 0.08) 1px, #042f24 1px);
+            background-size: 36px 36px;
+            background-position: 0 0, 18px 18px;
+        }
+
+        /* Bingkai Kartu Emas Mewah */
+        .gold-border-card {
+            background: linear-gradient(145deg, rgba(6, 78, 59, 0.85), rgba(4, 47, 36, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Gradien Teks Emas */
+        .text-gold-gradient {
+            background: linear-gradient(to right, #f3e5ab, #d4af37, #f3e5ab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shineText 4s linear infinite;
+        }
+
+        @keyframes shineText {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Animasi Reveal saat Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #042f24;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="islamic-pattern text-stone-100 antialiased selection:bg-goldPrimary selection:text-emeraldDeep overflow-x-hidden">
+
+    <!-- ==================== OVERLAY SAMPUL PEMBUKA (COVER) ==================== -->
+    <div id="coverOverlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-emeraldDeep px-6 text-center transition-all duration-1000 ease-in-out overflow-hidden">
+        <!-- Ornamen Mandala Berputar di Latar Belakang -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+            <svg class="w-[500px] h-[500px] sm:w-[680px] sm:h-[680px] animate-spin-slow text-goldPrimary" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.6">
+                <circle cx="100" cy="100" r="90" stroke-dasharray="4 4"/>
+                <circle cx="100" cy="100" r="75"/>
+                <polygon points="100,10 125,75 190,100 125,125 100,190 75,125 10,100 75,75"/>
+                <polygon points="100,10 125,75 190,100 125,125 100,190 75,125 10,100 75,75" transform="rotate(45 100 100)"/>
+                <circle cx="100" cy="100" r="45" stroke-dasharray="2 3"/>
+            </svg>
+        </div>
+
+        <!-- Bingkai Lengkung Islami -->
+        <div class="relative z-10 max-w-md w-full gold-border-card rounded-t-full rounded-b-3xl p-8 sm:p-10 flex flex-col items-center">
+            <!-- Ornamen Lentera Kecil -->
+            <div class="text-goldPrimary text-2xl mb-3 animate-float">
+                <i class="fa-solid fa-mosque"></i>
+            </div>
+
+            <p class="font-arabic text-2xl sm:text-3xl text-goldLight mb-2">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+            <span class="uppercase tracking-[0.25em] text-xs text-goldPrimary/90 font-medium mb-4">Undangan Walimatul Khitan</span>
+
+            <!-- Emblem Inisial -->
+            <div class="w-24 h-24 rounded-full border-2 border-goldPrimary/70 flex items-center justify-center bg-emeraldDeep/80 shadow-lg mb-4 relative">
+                <div class="w-20 h-20 rounded-full border border-dashed border-goldLight/50 flex items-center justify-center">
+                    <span class="font-display text-4xl font-bold text-gold-gradient">S</span>
+                </div>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl font-bold text-gold-gradient tracking-wider mb-2">SAPRAN</h1>
+            <p class="text-sm sm:text-base text-stone-300 font-light mb-6">Ahad, 29 November 2026 &bull; Sumbersari</p>
+
+            <!-- Sapaan Tamu Dinamis (bisa dibaca dari parameter URL ?to=NamaTamu) -->
+            <div class="w-full bg-emeraldDeep/70 border border-goldPrimary/30 rounded-2xl py-3 px-4 mb-6">
+                <p class="text-xs text-stone-400 mb-1">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <p id="guestNameDisplay" class="font-serif text-lg font-semibold text-goldLight">Tamu Undangan</p>
+            </div>
+
+            <!-- Tombol Buka Undangan -->
+            <button id="openInvitationBtn" class="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-to-r from-goldDark via-goldPrimary to-goldDark text-emeraldDeep font-semibold rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 animate-pulse-glow cursor-pointer">
+                <i class="fa-solid fa-envelope-open-text text-lg group-hover:rotate-12 transition-transform"></i>
+                <span>Buka Undangan</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== TOMBOL KONTROL AUDIO MELAYANG ==================== -->
+    <div id="floatingControls" class="fixed bottom-5 right-5 z-40 hidden flex-col gap-3">
+        <button id="audioToggleBtn" aria-label="Putar atau Hentikan Musik" title="Musik Latar Islami" class="w-12 h-12 rounded-full bg-emeraldRich/90 border border-goldPrimary text-goldPrimary shadow-xl flex items-center justify-center hover:bg-goldPrimary hover:text-emeraldDeep transition-all duration-300 cursor-pointer">
+            <i id="audioIcon" class="fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+
+    <!-- ==================== KONTEN UTAMA UNDANGAN ==================== -->
+    <main id="mainContent" class="max-w-2xl mx-auto px-4 sm:px-6 py-10 space-y-12 opacity-0 transition-opacity duration-1000">
+
+        <!-- 1. HERO SECTION -->
+        <section class="gold-border-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden reveal">
+            <!-- Hiasan Sudut -->
+            <div class="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-goldPrimary/60 rounded-tl-xl"></div>
+            <div class="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-goldPrimary/60 rounded-tr-xl"></div>
+            <div class="absolute bottom-3 left-3 w-8 h-8 border-b-2 border-l-2 border-goldPrimary/60 rounded-bl-xl"></div>
+            <div class="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-goldPrimary/60 rounded-br-xl"></div>
+
+            <p class="font-arabic text-2xl sm:text-3xl text-goldLight mb-3 leading-relaxed">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-lg mx-auto mb-6">
+                Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara <strong class="text-goldLight font-medium">Walimatul Khitan</strong> putra tercinta kami:
+            </p>
+
+            <!-- Bingkai Foto / Ilustrasi Anak Sholeh -->
+            <div class="relative w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-5">
+                <div class="absolute inset-0 rounded-full border-2 border-dashed border-goldPrimary animate-spin-slow"></div>
+                <div class="w-full h-full rounded-full p-2">
+                    <div class="w-full h-full rounded-full bg-gradient-to-b from-emeraldRich to-emeraldDeep border-2 border-goldPrimary flex flex-col items-center justify-center overflow-hidden shadow-inner">
+                        <!-- Ilustrasi SVG Anak Berpeci -->
+                        <svg viewBox="0 0 120 120" class="w-28 h-28 sm:w-32 sm:h-32">
+                            <!-- Cahaya Latar -->
+                            <circle cx="60" cy="60" r="50" fill="rgba(212, 175, 55, 0.12)"/>
+                            <!-- Baju Koko -->
+                            <path d="M25 115 C25 88, 95 88, 95 115 Z" fill="#f8fafc"/>
+                            <path d="M48 92 L60 112 L72 92" fill="none" stroke="#d4af37" stroke-width="2.5"/>
+                            <!-- Leher & Wajah -->
+                            <rect x="53" y="74" width="14" height="16" rx="6" fill="#f1c27d"/>
+                            <circle cx="60" cy="56" r="22" fill="#f1c27d"/>
+                            <!-- Mata & Senyum Ramah -->
+                            <circle cx="52" cy="54" r="2.3" fill="#1e293b"/>
+                            <circle cx="68" cy="54" r="2.3" fill="#1e293b"/>
+                            <path d="M53 63 Q60 70 67 63" fill="none" stroke="#9a3412" stroke-width="2.2" stroke-linecap="round"/>
+                            <!-- Peci Hitam & Lis Emas -->
+                            <path d="M38 44 C38 26, 82 26, 82 44 Z" fill="#0f172a"/>
+                            <rect x="38" y="40" width="44" height="4.5" rx="2" fill="#d4af37"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="font-display text-4xl sm:text-5xl font-bold text-gold-gradient tracking-wider mb-2">SAPRAN</h2>
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-emeraldDeep/80 border border-goldPrimary/40 text-xs text-goldLight mb-6">
+                <i class="fa-solid fa-star-and-crescent text-goldPrimary"></i>
+                <span>Putra Tercinta</span>
+            </div>
+
+            <!-- Hitung Mundur (Countdown Timer) -->
+            <div class="pt-4 border-t border-goldPrimary/20">
+                <p class="text-xs uppercase tracking-widest text-stone-400 mb-3">Menuju Hari Bahagia</p>
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+                    <div class="bg-emeraldDeep/90 border border-goldPrimary/40 rounded-2xl p-2.5 sm:p-3">
+                        <span id="cdDays" class="block font-display text-xl sm:text-3xl font-bold text-goldPrimary">00</span>
+                        <span class="text-[11px] sm:text-xs text-stone-300">Hari</span>
+                    </div>
+                    <div class="bg-emeraldDeep/90 border border-goldPrimary/40 rounded-2xl p-2.5 sm:p-3">
+                        <span id="cdHours" class="block font-display text-xl sm:text-3xl font-bold text-goldPrimary">00</span>
+                        <span class="text-[11px] sm:text-xs text-stone-300">Jam</span>
+                    </div>
+                    <div class="bg-emeraldDeep/90 border border-goldPrimary/40 rounded-2xl p-2.5 sm:p-3">
+                        <span id="cdMinutes" class="block font-display text-xl sm:text-3xl font-bold text-goldPrimary">00</span>
+                        <span class="text-[11px] sm:text-xs text-stone-300">Menit</span>
+                    </div>
+                    <div class="bg-emeraldDeep/90 border border-goldPrimary/40 rounded-2xl p-2.5 sm:p-3">
+                        <span id="cdSeconds" class="block font-display text-xl sm:text-3xl font-bold text-goldPrimary">00</span>
+                        <span class="text-[11px] sm:text-xs text-stone-300">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. VIDEO ANIMASI / MOTION GRAPHIC KHITANAN INTERAKTIF -->
+        <section class="gold-border-card rounded-3xl p-5 sm:p-8 reveal">
+            <div class="text-center mb-4">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldPrimary font-semibold">Video Undangan</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-goldLight mt-1">Motion Graphic Walimatul Khitan</h3>
+                <p class="text-xs sm:text-sm text-stone-300 mt-1">Tayangan animasi ucapan syukur & undangan resmi</p>
+            </div>
+
+            <!-- Bingkai Pemutar Video Canvas Interaktif -->
+            <div class="relative rounded-2xl overflow-hidden border-2 border-goldPrimary/50 bg-emeraldDeep shadow-2xl">
+                <!-- Wrapper Responsif Aspek Rasio 16:9 -->
+                <div id="videoContainer" class="relative w-full aspect-video bg-emeraldDeep">
+                    <canvas id="motionCanvas" class="w-full h-full block"></canvas>
+                </div>
+
+                <!-- Bar Kontrol Pemutar Video -->
+                <div class="bg-emeraldDeep/95 border-t border-goldPrimary/30 px-4 py-3 flex items-center justify-between gap-3">
+                    <button id="videoPlayPauseBtn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-goldPrimary text-emeraldDeep text-xs sm:text-sm font-semibold hover:bg-goldLight transition cursor-pointer">
+                        <i id="videoPlayIcon" class="fa-solid fa-pause"></i>
+                        <span id="videoPlayText">Jeda</span>
+                    </button>
+
+                    <!-- Progress Bar Video -->
+                    <div class="flex-1 bg-emeraldRich h-2 rounded-full overflow-hidden cursor-pointer" id="videoProgressTrack">
+                        <div id="videoProgressBar" class="bg-gradient-to-r from-goldDark to-goldLight h-full w-0 transition-all duration-150"></div>
+                    </div>
+
+                    <button id="videoRestartBtn" title="Ulangi Video" class="p-2 rounded-full text-goldLight hover:bg-emeraldRich transition cursor-pointer">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DETAIL WAKTU & LOKASI ACARA -->
+        <section class="gold-border-card rounded-3xl p-6 sm:p-10 text-center reveal">
+            <span class="text-xs uppercase tracking-[0.2em] text-goldPrimary font-semibold">Waktu & Tempat</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-goldLight mt-1 mb-6">Rangkaian Acara</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <!-- Kartu Hari & Tanggal -->
+                <div class="bg-emeraldDeep/80 border border-goldPrimary/30 rounded-2xl p-5 flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-full bg-goldPrimary/15 text-goldPrimary flex items-center justify-center text-xl mb-3">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold text-goldLight mb-1">Hari & Tanggal</h4>
+                    <p class="text-base font-medium text-white">Ahad, 29 November 2026</p>
+                    <p class="text-xs text-stone-400 mt-1">19 Jumadil Akhir 1448 H</p>
+                </div>
+
+                <!-- Kartu Waktu -->
+                <div class="bg-emeraldDeep/80 border border-goldPrimary/30 rounded-2xl p-5 flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 rounded-full bg-goldPrimary/15 text-goldPrimary flex items-center justify-center text-xl mb-3">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold text-goldLight mb-1">Waktu Pelaksanaan</h4>
+                    <p class="text-base font-medium text-white">Pukul 09.00 WITA - Selesai</p>
+                    <p class="text-xs text-stone-400 mt-1">Diharapkan hadir tepat waktu</p>
+                </div>
+            </div>
+
+            <!-- Kartu Lokasi Utama: Sumbersari -->
+            <div class="bg-emeraldDeep/90 border border-goldPrimary/40 rounded-2xl p-6 mb-6">
+                <div class="w-12 h-12 rounded-full bg-goldPrimary/15 text-goldPrimary flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h4 class="font-serif text-xl font-semibold text-goldLight mb-1">Lokasi Acara</h4>
+                <p class="text-lg font-bold text-white tracking-wide mb-2">Sumbersari</p>
+                <p class="text-xs sm:text-sm text-stone-300 max-w-md mx-auto mb-5">
+                    Bertempat di kediaman kami di wilayah Sumbersari. Silakan klik tombol petunjuk arah di bawah untuk membuka peta navigasi.
+                </p>
+
+                <!-- Embed Mini Map Preview + Tombol Google Maps -->
+                <div class="rounded-xl overflow-hidden border border-goldPrimary/30 mb-4 h-48 w-full bg-emeraldRich">
+                    <iframe
+                        title="Peta Lokasi Sumbersari"
+                        src="https://maps.google.com/maps?q=Sumbersari&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        class="w-full h-full border-0 filter contrast-105"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Sumbersari" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-goldDark via-goldPrimary to-goldDark text-emeraldDeep font-semibold rounded-full shadow-md hover:scale-105 transition cursor-pointer">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Buka Google Maps</span>
+                    </a>
+                    <button id="saveCalendarBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-emeraldRich border border-goldPrimary/60 text-goldLight font-medium rounded-full hover:bg-goldPrimary/20 transition cursor-pointer">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        <span>Simpan ke Kalender</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. DOA WALIMATUL KHITAN -->
+        <section class="gold-border-card rounded-3xl p-6 sm:p-10 text-center reveal">
+            <div class="w-12 h-12 rounded-full bg-goldPrimary/15 text-goldPrimary flex items-center justify-center text-xl mx-auto mb-3">
+                <i class="fa-solid fa-hands-praying"></i>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-goldLight mb-4">Doa Walimatul Khitan</h3>
+
+            <div class="bg-emeraldDeep/80 border border-goldPrimary/30 rounded-2xl p-5 sm:p-7 space-y-4">
+                <p class="font-arabic text-2xl sm:text-3xl text-goldLight leading-loose" dir="rtl">
+                    اَللَّهُمَّ وَفِّقْنَا لِمَا تُحِبُّ وَتَرْضَى وَاجْعَلْ هَذَا الْوَلَدَ وَلَدًا صَالِحًا نَافِعًا لِأَهْلِهِ وَوَطَنِهِ وَدِيْنِهِ
+                </p>
+                <p class="text-xs sm:text-sm italic text-goldPrimary/90 font-medium">
+                    "Allahumma waffiqna lima tuhibbu wa tardha, waj'al hadzal walada waladan shalihan nafi'an li ahlihi wa wathanihi wa dinihi."
+                </p>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                    Artinya: "Ya Allah, bimbinglah kami pada apa yang Engkau cintai dan Engkau ridhai, serta jadikanlah anak ini anak yang shalih, bermanfaat bagi keluarganya, bangsanya, dan agamanya."
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. BUKU TAMU & UCAPAN DOA (RSVP & WISH WALL) -->
+        <section class="gold-border-card rounded-3xl p-6 sm:p-10 reveal">
+            <div class="text-center mb-6">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldPrimary font-semibold">Doa Restu & Konfirmasi</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-goldLight mt-1">Buku Tamu & Ucapan</h3>
+                <p class="text-xs sm:text-sm text-stone-300 mt-1">Kirimkan doa terbaik untuk Ananda Sapran</p>
+            </div>
+
+            <!-- Form Input Ucapan -->
+            <form id="wishForm" class="space-y-4 mb-8">
+                <div>
+                    <label for="senderName" class="block text-xs font-medium text-goldLight mb-1.5">Nama Anda</label>
+                    <input type="text" id="senderName" required placeholder="Contoh: Keluarga Bpk. Ahmad" class="w-full px-4 py-3 rounded-xl bg-emeraldDeep/90 border border-goldPrimary/40 text-white placeholder-stone-400 focus:outline-none focus:border-goldPrimary transition text-sm">
+                </div>
+
+                <div>
+                    <label for="attendanceStatus" class="block text-xs font-medium text-goldLight mb-1.5">Konfirmasi Kehadiran</label>
+                    <select id="attendanceStatus" class="w-full px-4 py-3 rounded-xl bg-emeraldDeep/90 border border-goldPrimary/40 text-white focus:outline-none focus:border-goldPrimary transition text-sm">
+                        <option value="Hadir">InsyaAllah Hadir</option>
+                        <option value="Ragu-ragu">Masih Ragu-ragu</option>
+                        <option value="Berhalangan">Maaf, Berhalangan Hadir</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="wishMessage" class="block text-xs font-medium text-goldLight mb-1.5">Ucapan & Doa untuk Sapran</label>
+                    <textarea id="wishMessage" rows="3" required placeholder="Tuliskan doa terbaik Anda untuk Ananda Sapran..." class="w-full px-4 py-3 rounded-xl bg-emeraldDeep/90 border border-goldPrimary/40 text-white placeholder-stone-400 focus:outline-none focus:border-goldPrimary transition text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-goldDark via-goldPrimary to-goldDark text-emeraldDeep font-semibold rounded-xl shadow-lg hover:brightness-110 active:scale-[0.99] transition flex items-center justify-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Kirim Ucapan & Konfirmasi</span>
+                </button>
+            </form>
+
+            <!-- Daftar Ucapan Tamu -->
+            <div class="border-t border-goldPrimary/25 pt-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-serif text-lg font-semibold text-goldLight">Doa & Ucapan Tamu</h4>
+                    <span id="wishCountBadge" class="text-xs px-3 py-1 rounded-full bg-goldPrimary/20 text-goldLight border border-goldPrimary/40">0 Ucapan</span>
+                </div>
+                <div id="wishListContainer" class="space-y-3 max-h-80 overflow-y-auto pr-1">
+                    <!-- Item ucapan akan dirender oleh JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. BAGIKAN UNDANGAN (AKSES KAPAN SAJA) -->
+        <section class="gold-border-card rounded-3xl p-6 sm:p-8 text-center reveal">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-goldLight mb-2">Bagikan Undangan Ini</h3>
+            <p class="text-xs sm:text-sm text-stone-300 mb-5">
+                Simpan atau bagikan tautan undangan ini kepada kerabat & sahabat agar dapat diakses kapan saja.
+            </p>
+
+            <!-- Input Custom Nama Tamu untuk Link Personal -->
+            <div class="max-w-md mx-auto mb-5 bg-emeraldDeep/80 border border-goldPrimary/30 rounded-2xl p-4 text-left">
+                <label for="customGuestInput" class="block text-xs text-goldLight mb-1.5">Buat Link Khusus Nama Tamu (Opsional):</label>
+                <div class="flex gap-2">
+                    <input type="text" id="customGuestInput" placeholder="Ketik nama tamu..." class="flex-1 px-3 py-2 rounded-xl bg-emeraldRich/80 border border-goldPrimary/30 text-white text-xs sm:text-sm focus:outline-none focus:border-goldPrimary">
+                    <button id="copyCustomLinkBtn" class="px-4 py-2 rounded-xl bg-goldPrimary text-emeraldDeep font-semibold text-xs sm:text-sm hover:bg-goldLight transition cursor-pointer whitespace-nowrap">
+                        <i class="fa-regular fa-copy mr-1"></i> Salin Link
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button id="shareWhatsappBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md transition cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Bagikan ke WhatsApp</span>
+                </button>
+                <button id="copyGeneralLinkBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emeraldRich border border-goldPrimary/60 text-goldLight hover:bg-goldPrimary/20 font-medium text-sm transition cursor-pointer">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Salin Tautan Undangan</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-6 space-y-2 text-stone-400 text-xs">
+            <p class="text-stone-300 max-w-md mx-auto leading-relaxed">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.
+            </p>
+            <p class="font-arabic text-xl text-goldLight pt-2">وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+            <p class="font-display text-sm text-goldPrimary font-semibold pt-2">Keluarga Besar Ananda Sapran</p>
+        </footer>
+
+    </main>
+
+    <!-- ==================== NOTIFIKASI TOAST (PENGGANTI ALERT) ==================== -->
+    <div id="toastNotification" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-emeraldDeep border border-goldPrimary text-goldLight px-5 py-3 rounded-full shadow-2xl text-xs sm:text-sm font-medium flex items-center gap-2.5 opacity-0 pointer-events-none transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-goldPrimary"></i>
+        <span id="toastMessage">Pesan notifikasi</span>
+    </div>
+
+    <!-- ==================== JAVASCRIPT INTERAKTIF ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. BACA NAMA TAMU DARI URL (?to=NamaTamu)
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestParam = urlParams.get('to');
+            if (guestParam && guestParam.trim() !== '') {
+                const decodedName = decodeURIComponent(guestParam.replace(/\+/g, ' '));
+                document.getElementById('guestNameDisplay').textContent = decodedName;
+                document.getElementById('senderName').value = decodedName;
+            }
+
+            // FUNGSI TOAST NOTIFICATION
+            const toastEl = document.getElementById('toastNotification');
+            const toastMsgEl = document.getElementById('toastMessage');
+            let toastTimeout;
+
+            function showToast(message) {
+                toastMsgEl.textContent = message;
+                toastEl.classList.remove('opacity-0', 'pointer-events-none');
+                toastEl.classList.add('opacity-100', 'translate-y-2');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toastEl.classList.remove('opacity-100', 'translate-y-2');
+                    toastEl.classList.add('opacity-0', 'pointer-events-none');
+                }, 3200);
+            }
+
+            // 2. WEB AUDIO API - SYNTHESIZER MELODI LEMBUT ISLAMI (BEBAS ERROR FILE EKSTERNAL)
+            let audioCtx = null;
+            let isAudioPlaying = false;
+            let melodyInterval = null;
+
+            // Tangga nada Hijaz / Nuansa Timur Tengah Lembut (Hz)
+            const notes = [
+                293.66, // D4
+                311.13, // Eb4
+                369.99, // F#4
+                392.00, // G4
+                440.00, // A4
+                466.16, // Bb4
+                554.37, // C#5
+                587.33  // D5
+            ];
+            const melodySequence = [0, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 2, 0];
+            let noteIndex = 0;
+
+            function playSoftNote(freq) {
+                if (!audioCtx || !isAudioPlaying) return;
+                try {
+                    const now = audioCtx.currentTime;
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now);
+
+                    // Envelope lembut seperti petikan kecapi/oud halus
+                    gain.gain.setValueAtTime(0.0001, now);
+                    gain.gain.exponentialRampToValueAtTime(0.06, now + 0.15);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.4);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + 1.45);
+                } catch (e) {
+                    // Abaikan jika browser memblokir sementara
+                }
+            }
+
+            function startMusic() {
+                if (!audioCtx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContext();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                if (!isAudioPlaying) {
+                    isAudioPlaying = true;
+                    document.getElementById('audioIcon').className = 'fa-solid fa-volume-high';
+                    playSoftNote(notes[melodySequence[noteIndex]]);
+                    melodyInterval = setInterval(() => {
+                        noteIndex = (noteIndex + 1) % melodySequence.length;
+                        playSoftNote(notes[melodySequence[noteIndex]]);
+                    }, 950);
+                }
+            }
+
+            function stopMusic() {
+                isAudioPlaying = false;
+                clearInterval(melodyInterval);
+                document.getElementById('audioIcon').className = 'fa-solid fa-volume-xmark';
+            }
+
+            document.getElementById('audioToggleBtn').addEventListener('click', () => {
+                if (isAudioPlaying) {
+                    stopMusic();
+                    showToast('Musik latar dijeda');
+                } else {
+                    startMusic();
+                    showToast('Musik latar diputar');
+                }
+            });
+
+            // 3. BUKA UNDANGAN DARI COVER
+            const coverOverlay = document.getElementById('coverOverlay');
+            const mainContent = document.getElementById('mainContent');
+            const floatingControls = document.getElementById('floatingControls');
+
+            document.getElementById('openInvitationBtn').addEventListener('click', () => {
+                coverOverlay.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+                mainContent.classList.remove('opacity-0');
+                floatingControls.classList.remove('hidden');
+                floatingControls.classList.add('flex');
+
+                startMusic();
+                startVideoAnimation();
+                triggerScrollReveal();
+            });
+
+            // 4. HITUNG MUNDUR (COUNTDOWN) KE AHAD, 29 NOVEMBER 2026 PUKUL 09:00 WITA (UTC+8)
+            const targetDate = new Date('2026-11-29T09:00:00+08:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance <= 0) {
+                    document.getElementById('cdDays').textContent = '00';
+                    document.getElementById('cdHours').textContent = '00';
+                    document.getElementById('cdMinutes').textContent = '00';
+                    document.getElementById('cdSeconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+                document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cdMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cdSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // 5. VIDEO MOTION GRAPHIC CANVAS INTERAKTIF (DURASI 18 DETIK LOOP)
+            const canvas = document.getElementById('motionCanvas');
+            const ctx = canvas.getContext('2d');
+            const videoContainer = document.getElementById('videoContainer');
+            const progressBar = document.getElementById('videoProgressBar');
+            const playPauseBtn = document.getElementById('videoPlayPauseBtn');
+            const playIcon = document.getElementById('videoPlayIcon');
+            const playText = document.getElementById('videoPlayText');
+            const restartBtn = document.getElementById('videoRestartBtn');
+            const progressTrack = document.getElementById('videoProgressTrack');
+
+            let videoPlaying = true;
+            let videoElapsed = 0; // dalam detik
+            const videoDuration = 18; // total durasi 18 detik per siklus
+            let lastFrameTime = performance.now();
+
+            // Partikel Cahaya Emas untuk Motion Graphic
+            const particles = Array.from({ length: 28 }, () => ({
+                x: Math.random(),
+                y: Math.random(),
+                r: Math.random() * 2.5 + 0.8,
+                speedY: Math.random() * 0.04 + 0.015,
+                alpha: Math.random() * 0.7 + 0.2
+            }));
+
+            function resizeCanvas() {
+                const rect = videoContainer.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            function drawIslamicStar(cx, cy, spikes, outerR, innerR, rotation, color) {
+                ctx.save();
+                ctx.translate(cx, cy);
+                ctx.rotate(rotation);
+                ctx.beginPath();
+                for (let i = 0; i < spikes * 2; i++) {
+                    const r = i % 2 === 0 ? outerR : innerR;
+                    const angle = (i * Math.PI) / spikes;
+                    const x = Math.cos(angle) * r;
+                    const y = Math.sin(angle) * r;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            function renderVideoFrame(timestamp) {
+                const dt = (timestamp - lastFrameTime) / 1000;
+                lastFrameTime = timestamp;
+
+                if (videoPlaying) {
+                    videoElapsed = (videoElapsed + dt) % videoDuration;
+                }
+
+                const w = videoContainer.clientWidth;
+                const h = videoContainer.clientHeight;
+
+                // Update Progress Bar
+                const progressPct = (videoElapsed / videoDuration) * 100;
+                progressBar.style.width = `${progressPct}%`;
+
+                // Latar Gradien Zamrud
+                const bgGrad = ctx.createRadialGradient(w / 2, h / 2, 10, w / 2, h / 2, w * 0.75);
+                bgGrad.addColorStop(0, '#065f46');
+                bgGrad.addColorStop(1, '#022c22');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, w, h);
+
+                // Bingkai Emas Dalam Video
+                const pad = Math.min(w, h) * 0.06;
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.5)';
+                ctx.lineWidth = 1.5;
+                ctx.strokeRect(pad, pad, w - pad * 2, h - pad * 2);
+
+                // Partikel Melayang
+                particles.forEach(p => {
+                    if (videoPlaying) {
+                        p.y -= p.speedY * dt;
+                        if (p.y < 0) p.y = 1;
+                    }
+                    ctx.beginPath();
+                    ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(243, 229, 171, ${p.alpha})`;
+                    ctx.fill();
+                });
+
+                // Ornamen Bintang Islami Berputar di Latar
+                drawIslamicStar(w / 2, h / 2, 8, Math.min(w, h) * 0.36, Math.min(w, h) * 0.22, videoElapsed * 0.25, 'rgba(212, 175, 55, 0.18)');
+                drawIslamicStar(w / 2, h / 2, 8, Math.min(w, h) * 0.36, Math.min(w, h) * 0.22, -videoElapsed * 0.25 + 0.4, 'rgba(212, 175, 55, 0.18)');
+
+                // Adegan Teks Dinamis (3 Scene masing-masing 6 detik)
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const scene = Math.floor(videoElapsed / 6);
+                const sceneProgress = (videoElapsed % 6) / 6;
+                // Fade in & fade out mulus per scene
+                const alpha = sceneProgress < 0.15 ? sceneProgress / 0.15 : (sceneProgress > 0.85 ? (1 - sceneProgress) / 0.15 : 1);
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+
+                if (scene === 0) {
+                    // SCENE 1: Pembuka & Nama Sapran
+                    ctx.fillStyle = '#f3e5ab';
+                    ctx.font = `600 ${Math.max(12, w * 0.025)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('WALIMATUL KHITAN', w / 2, h * 0.34);
+
+                    ctx.fillStyle = '#d4af37';
+                    ctx.font = `700 ${Math.max(26, w * 0.075)}px "Cinzel", serif`;
+                    ctx.fillText('SAPRAN', w / 2, h * 0.50);
+
+                    ctx.fillStyle = '#e7e5e4';
+                    ctx.font = `400 ${Math.max(11, w * 0.023)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('Semoga menjadi anak yang shalih & berbakti', w / 2, h * 0.65);
+                } else if (scene === 1) {
+                    // SCENE 2: Waktu & Lokasi
+                    ctx.fillStyle = '#d4af37';
+                    ctx.font = `600 ${Math.max(12, w * 0.024)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('INSYAALLAH DILAKSANAKAN PADA', w / 2, h * 0.30);
+
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = `700 ${Math.max(18, w * 0.048)}px "Playfair Display", serif`;
+                    ctx.fillText('Ahad, 29 November 2026', w / 2, h * 0.45);
+
+                    ctx.fillStyle = '#f3e5ab';
+                    ctx.font = `500 ${Math.max(12, w * 0.026)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('Pukul 09.00 WITA - Selesai', w / 2, h * 0.57);
+
+                    ctx.fillStyle = '#d4af37';
+                    ctx.font = `600 ${Math.max(13, w * 0.028)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('Lokasi: Sumbersari', w / 2, h * 0.69);
+                } else {
+                    // SCENE 3: Penutup & Ucapan Terima Kasih
+                    ctx.fillStyle = '#f3e5ab';
+                    ctx.font = `700 ${Math.max(16, w * 0.042)}px "Playfair Display", serif`;
+                    ctx.fillText('Kehadiran & Doa Restu Anda', w / 2, h * 0.38);
+
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = `400 ${Math.max(12, w * 0.025)}px "Plus Jakarta Sans", sans-serif`;
+                    ctx.fillText('Adalah kebahagiaan besar bagi keluarga kami', w / 2, h * 0.51);
+
+                    ctx.fillStyle = '#d4af37';
+                    ctx.font = `600 ${Math.max(12, w * 0.025)}px "Cinzel", serif`;
+                    ctx.fillText('Wassalamu\'alaikum Wr. Wb.', w / 2, h * 0.65);
+                }
+                ctx.restore();
+
+                requestAnimationFrame(renderVideoFrame);
+            }
+
+            function startVideoAnimation() {
+                resizeCanvas();
+                lastFrameTime = performance.now();
+                requestAnimationFrame(renderVideoFrame);
+            }
+
+            playPauseBtn.addEventListener('click', () => {
+                videoPlaying = !videoPlaying;
+                if (videoPlaying) {
+                    playIcon.className = 'fa-solid fa-pause';
+                    playText.textContent = 'Jeda';
+                } else {
+                    playIcon.className = 'fa-solid fa-play';
+                    playText.textContent = 'Putar';
+                }
+            });
+
+            restartBtn.addEventListener('click', () => {
+                videoElapsed = 0;
+                videoPlaying = true;
+                playIcon.className = 'fa-solid fa-pause';
+                playText.textContent = 'Jeda';
+            });
+
+            progressTrack.addEventListener('click', (e) => {
+                const rect = progressTrack.getBoundingClientRect();
+                const clickRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+                videoElapsed = clickRatio * videoDuration;
+            });
+
+            // 6. SIMPAN KE KALENDER (.ICS FILE DOWNLOAD)
+            document.getElementById('saveCalendarBtn').addEventListener('click', () => {
+                const icsContent = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'PRODID:-//Undangan Khitan Sapran//ID',
+                    'BEGIN:VEVENT',
+                    'DTSTART:20261129T010000Z',
+                    'DTEND:20261129T050000Z',
+                    'SUMMARY:Walimatul Khitan Ananda Sapran',
+                    'DESCRIPTION:Undangan acara syukuran Walimatul Khitan Ananda Sapran.',
+                    'LOCATION:Sumbersari',
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                ].join('\r\n');
+
+                const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'Walimatul-Khitan-Sapran.ics';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showToast('File kalender acara berhasil diunduh!');
+            });
+
+            // 7. BUKU TAMU & UCAPAN DOA (LOCALSTORAGE)
+            const STORAGE_KEY = 'khitan_sapran_wishes_v1';
+            const defaultWishes = [
+                {
+                    name: 'Keluarga H. Sulaiman',
+                    status: 'Hadir',
+                    message: 'Barakallah untuk Ananda Sapran. Semoga menjadi anak yang shalih, cerdas, sehat selalu, dan berbakti kepada kedua orang tua.',
+                    time: 'Baru saja'
+                },
+                {
+                    name: 'Ustadz Fauzi & Keluarga',
+                    status: 'Hadir',
+                    message: 'Selamat menempuh fase baru dalam syariat Islam nak Sapran. Semoga Allah senantiasa memberkahi langkahmu.',
+                    time: '1 jam lalu'
+                }
+            ];
+
+            function loadWishes() {
+                try {
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    return saved ? JSON.parse(saved) : defaultWishes;
+                } catch (e) {
+                    return defaultWishes;
+                }
+            }
+
+            function renderWishes() {
+                const wishes = loadWishes();
+                const container = document.getElementById('wishListContainer');
+                const badge = document.getElementById('wishCountBadge');
+                badge.textContent = `${wishes.length} Ucapan`;
+                container.innerHTML = '';
+
+                wishes.forEach(item => {
+                    const statusBadgeClass = item.status === 'Hadir'
+                        ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                        : item.status === 'Ragu-ragu'
+                            ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                            : 'bg-rose-500/20 text-rose-300 border-rose-500/40';
+
+                    const card = document.createElement('div');
+                    card.className = 'bg-emeraldDeep/80 border border-goldPrimary/25 rounded-2xl p-4 space-y-1.5';
+                    card.innerHTML = `
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="font-semibold text-sm text-goldLight">${escapeHTML(item.name)}</span>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full border ${statusBadgeClass}">${escapeHTML(item.status)}</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-200 leading-relaxed">${escapeHTML(item.message)}</p>
+                        <span class="block text-[10px] text-stone-400 pt-1"><i class="fa-regular fa-clock mr-1"></i>${escapeHTML(item.time)}</span>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            function escapeHTML(str) {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            }
+
+            document.getElementById('wishForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nameInput = document.getElementById('senderName');
+                const statusInput = document.getElementById('attendanceStatus');
+                const msgInput = document.getElementById('wishMessage');
+
+                const newWish = {
+                    name: nameInput.value.trim(),
+                    status: statusInput.value,
+                    message: msgInput.value.trim(),
+                    time: 'Baru saja'
+                };
+
+                const currentWishes = loadWishes();
+                currentWishes.unshift(newWish);
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentWishes));
+                } catch (err) {
+                    // Fallback jika storage penuh
+                }
+
+                msgInput.value = '';
+                renderWishes();
+                showToast('Terima kasih! Ucapan & doa Anda telah ditambahkan.');
+            });
+
+            renderWishes();
+
+            // 8. FITUR SALIN TAUTAN & BAGIKAN KE WHATSAPP
+            function copyTextToClipboard(text) {
+                const tempInput = document.createElement('input');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            function getBaseInvitationUrl() {
+                return window.location.href.split('?')[0];
+            }
+
+            document.getElementById('copyGeneralLinkBtn').addEventListener('click', () => {
+                copyTextToClipboard(getBaseInvitationUrl());
+                showToast('Tautan undangan berhasil disalin!');
+            });
+
+            document.getElementById('copyCustomLinkBtn').addEventListener('click', () => {
+                const guestVal = document.getElementById('customGuestInput').value.trim();
+                const baseUrl = getBaseInvitationUrl();
+                const finalUrl = guestVal ? `${baseUrl}?to=${encodeURIComponent(guestVal)}` : baseUrl;
+                copyTextToClipboard(finalUrl);
+                showToast(guestVal ? `Link khusus untuk "${guestVal}" disalin!` : 'Tautan undangan disalin!');
+            });
+
+            document.getElementById('shareWhatsappBtn').addEventListener('click', () => {
+                const guestVal = document.getElementById('customGuestInput').value.trim();
+                const baseUrl = getBaseInvitationUrl();
+                const shareUrl = guestVal ? `${baseUrl}?to=${encodeURIComponent(guestVal)}` : baseUrl;
+
+                const waText = `Assalamu'alaikum Wr. Wb.\n\nDengan memohon rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i${guestVal ? ' *' + guestVal + '*' : ''} untuk hadir pada acara *Walimatul Khitan* putra kami:\n\n*SAPRAN*\n📅 Hari/Tgl: Ahad, 29 November 2026\n🕘 Waktu: 09.00 WITA - Selesai\n📍 Lokasi: Sumbersari\n\nBuka undangan digital & video lengkapnya di:\n${shareUrl}\n\nWassalamu'alaikum Wr. Wb.`;
+
+                window.open(`https://wa.me/?text=${encodeURIComponent(waText)}`, '_blank', 'noopener,noreferrer');
+            });
+
+            // 9. ANIMASI SCROLL REVEAL
+            function triggerScrollReveal() {
+                const reveals = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.12 });
+
+                reveals.forEach(el => observer.observe(el));
+            }
+        });
+    </script>
+</body>
+</html>
